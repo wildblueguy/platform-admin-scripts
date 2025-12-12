@@ -1,0 +1,27 @@
+network:
+  version: 2
+  ethernets:
+    INTERFACE_NAME:
+      dhcp4: true
+      nameservers:
+        addresses:
+        # DNS lib common in Linux has 3 nameserver limit (only addresses before break are used)
+        - 76.76.2.11 # Control D: p1.freedns.controld.com (malware-blocking)
+        - 9.9.9.9 # Quad 9: dns.quad9.net (malware-blocking)
+        - 1.1.1.2 # Cloudflare: security.cloudflare-dns.com (malware-blocking)
+        # ---
+        - 149.112.112.112 # Quad 9: dns.quad9.net (malware-blocking)
+        - 1.0.0.2 # Cloudflare: security.cloudflare-dns.com (malware-blocking)
+        - 2606:1a40::11 # Control D: p1.freedns.controld.com (malware-blocking)
+        - 2620:fe::fe # Quad 9: dns.quad9.net (malware-blocking)
+        - 2606:4700:4700::1112 # Cloudflare: security.cloudflare-dns.com (malware-blocking)
+        - 2620:fe::9 # Quad 9: dns.quad9.net (malware-blocking)
+        - 2606:4700:4700::1002 # Cloudflare: security.cloudflare-dns.com (malware-blocking)
+        - 76.76.2.1 # Control D: Malware-blocking (legacy) IPv4 #1
+        - 76.76.10.1 # Control D: Malware-blocking (legacy) IPv4 #2
+        - 2606:1a40::1 # Control D: Malware-blocking (legacy) IPv6 #1
+        - 2606:1a40:1::1 # Control D: Malware-blocking (legacy) IPv6 #2
+      dhcp4-overrides:
+        use-dns: false
+      dhcp6-overrides:
+        use-dns: false

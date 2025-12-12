@@ -1,0 +1,5 @@
+Defaults mail_badpass
+Defaults mailerpath="/usr/bin/msmtp"
+Defaults mailto="admin@your.domain"
+
+ubuntu ALL=(ALL) PASSWD:ALL
