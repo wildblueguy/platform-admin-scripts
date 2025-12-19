@@ -46,7 +46,15 @@
 
 ### Ubuntu (as `root`)
 
+- Delete an `iptables` table `filter` rule: `iptables -D CHAIN LINE_NUMBER`
+- Exclude incoming traffic on a particular interface from being forwarded (`iptables` firewall, if forwarding enabled in kernel): `iptables -I FORWARD 1 -i INTERFACE_NAME -j DROP`
+- View all `iptables` rules, preferring CIDR addressing and showing I/O interfaces and line numbers: `iptables -L -t TABLE_NAME -nv --line-numbers`, where `TABLE_NAME` is `filter`, `nat`, `mangle`, `raw`, or `security`)
+- View all `iptables` table `filter` rules: `iptables -L -nv --line-numbers`
+
 ### Windows
+
+- Add a network route (args: destination subnet, subnet mask, gateway IP): `route add A.B.C.0 MASK 255.255.255.0 E.F.G.H`
+- View routes: `route print`
 
 ## Manual administration
 
