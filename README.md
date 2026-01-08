@@ -35,7 +35,9 @@
 
 ### [Ubuntu scripts](ubuntu/platform-admin/) (to be run as `root`)
 
-### Windows
+### Ubuntu scripts (specific to WSL)
+
+### Windows scripts
 
 ## One-liner library
 
@@ -50,6 +52,8 @@
 - Exclude incoming traffic on a particular interface from being forwarded (`iptables` firewall, if forwarding enabled in kernel): `iptables -I FORWARD 1 -i INTERFACE_NAME -j DROP`
 - View all `iptables` rules, preferring CIDR addressing and showing I/O interfaces and line numbers: `iptables -L -t TABLE_NAME -nv --line-numbers`, where `TABLE_NAME` is `filter`, `nat`, `mangle`, `raw`, or `security`)
 - View all `iptables` table `filter` rules: `iptables -L -nv --line-numbers`
+
+### Ubuntu (on WSL)
 
 ### Windows
 
@@ -71,6 +75,18 @@
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
+```
+
+### Ubuntu (on WSL)
+
+#### *Set the default user*
+
+- `vi /etc/wsl.conf`
+- Add the following:
+
+```
+[user]
+default=NAME
 ```
 
 ### Windows
